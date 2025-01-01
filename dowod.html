@@ -19,17 +19,7 @@
             if (window.navigator.standalone) {
             document.body.classList.add('standalone');
         }
-      // nowy kod
-      function zaktualizujDate() {
-            const dzisiaj = new Date();
-            const dzien = String(dzisiaj.getDate()).padStart(2, '0'); // Dodaje 0 przed jednocyfrowymi dniami
-            const miesiac = String(dzisiaj.getMonth() + 1).padStart(2, '0'); // Dodaje 0 przed jednocyfrowymi miesiącami
-            const rok = dzisiaj.getFullYear();
-            const nowaData = `${dzien}.${miesiac}.${rok}`; // Format day.month.year
-
-            // Znajdź element i podmień jego zawartość tekstową
-            const element = document.querySelector('.last-update-date');
-            element.textContent = nowaData;
+      
         
     </script>
 </head>
@@ -298,6 +288,18 @@
         if (/Android/i.test(navigator.userAgent)) {
             document.body.classList.add('android');
         }
+      // nowy kod
+      function zaktualizujDate() {
+            const dzisiaj = new Date();
+            const dzien = String(dzisiaj.getDate()).padStart(2, '0'); // Dodaje 0 przed jednocyfrowymi dniami
+            const miesiac = String(dzisiaj.getMonth() + 1).padStart(2, '0'); // Dodaje 0 przed jednocyfrowymi miesiącami
+            const rok = dzisiaj.getFullYear();
+            const nowaData = `${dzien}.${miesiac}.${rok}`; // Format day.month.year
+
+            // Znajdź element i podmień jego zawartość tekstową
+            const element = document.querySelector('.last-update-date');
+            element.textContent = nowaData;
+            }
     </script>
 </body>
 
