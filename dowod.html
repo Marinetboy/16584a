@@ -288,18 +288,24 @@
         if (/Android/i.test(navigator.userAgent)) {
             document.body.classList.add('android');
         }
-      // nowy kod
-      function zaktualizujDate() {
-            const dzisiaj = new Date();
-            const dzien = String(dzisiaj.getDate()).padStart(2, '0'); // Dodaje 0 przed jednocyfrowymi dniami
-            const miesiac = String(dzisiaj.getMonth() + 1).padStart(2, '0'); // Dodaje 0 przed jednocyfrowymi miesiącami
-            const rok = dzisiaj.getFullYear();
-            const nowaData = `${dzien}.${miesiac}.${rok}`; // Format day.month.year
+      // początek nowego kodu Function to update the date
+        function updateDate() {
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0'); // Add leading zero to single-digit days
+            const month = String(today.getMonth() + 1).padStart(2, '0'); // Add leading zero to single-digit months
+            const year = today.getFullYear();
+            const newDate = `${day}.${month}.${year}`; // Format: day.month.year
 
-            // Znajdź element i podmień jego zawartość tekstową
+            // Find the element and update its text content
             const element = document.querySelector('.last-update-date');
-            element.textContent = nowaData;
+            if (element) {
+                element.textContent = newDate;
             }
+        }
+
+        // Call the function when the DOM is fully loaded
+        updateDate()
+      //koniec nowego kodu
     </script>
 </body>
 
