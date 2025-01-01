@@ -288,24 +288,6 @@
         if (/Android/i.test(navigator.userAgent)) {
             document.body.classList.add('android');
         }
-      // początek nowego kodu Function to update the date
-        function updateDate() {
-            const today = new Date();
-            const day = String(today.getDate()).padStart(2, '0'); // Add leading zero to single-digit days
-            const month = String(today.getMonth() + 1).padStart(2, '0'); // Add leading zero to single-digit months
-            const year = today.getFullYear();
-            const newDate = `${day}.${month}.${year}`; // Format: day.month.year
-
-            // Find the element and update its text content
-            const element = document.querySelector('.last-update-date');
-            if (element) {
-                element.textContent = newDate;
-            }
-        }
-
-        // Call the function when the DOM is fully loaded
-        updateDate()
-      //koniec nowego kodu
     </script>
 </body>
 
