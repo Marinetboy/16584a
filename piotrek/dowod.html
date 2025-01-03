@@ -153,14 +153,14 @@
                 <p class="krecha"></p>
                 <section class="dana">
                     <p class="info">Data zameldоwaniа na pobyt stały</p>
-                    <p class="main">2017-08-01</p>
+                    <p class="main">2017-04-01</p>
                 </section>
             </div>
         </div>
         <div class="last-update">
             <div>
                 <div class="last-update-text">Ostatnia aktualizacja</div>
-                <div class="last-update-date" id="last-update-date">30.12.2024</div>
+                <div class="last-update-date" id="last-update-date">26.09.2024</div>
             </div>
             <button id="aktualizuj">Aktualizuj</button>
         </div>
@@ -183,7 +183,8 @@
             const timeString = `Czas: ${hours}:${minutes}:${seconds} ${day}.${month}.${year}`;
             document.getElementById('data').textContent = timeString;
         }
-				//Data aktualizacji
+		
+		//Data aktualizacji
 		        function updateTime() {
             const now = new Date();
             const hours = String(now.getHours()).padStart(2, '0');
