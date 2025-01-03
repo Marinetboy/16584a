@@ -160,7 +160,7 @@
         <div class="last-update">
             <div>
                 <div class="last-update-text">Ostatnia aktualizacja</div>
-                <div class="last-update-date">30.12.2024</div>
+                <div class="last-update-date" id="last-update-date">30.12.2024</div>
             </div>
             <button id="aktualizuj">Aktualizuj</button>
         </div>
@@ -182,6 +182,18 @@
             const year = now.getFullYear();
             const timeString = `Czas: ${hours}:${minutes}:${seconds} ${day}.${month}.${year}`;
             document.getElementById('data').textContent = timeString;
+        }
+				//Data aktualizacji
+		        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const timeString = `${day}.${month}.${year}`;
+            document.getElementById('last-update-date').textContent = timeString;
         }
 
         setInterval(updateTime, 1000);
